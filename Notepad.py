@@ -141,7 +141,7 @@ class UI(QMainWindow):
 
         if filename:
             with open(filename, 'w') as f:
-                f.write(self.plain_text.toPlainText())
+                f.write(self.plain_text.toPlainText()) 
                 self.filename = filename
                 self.setWindowTitle(
                     str(os.path.basename(filename)) + " - Notepad[*]")
