@@ -1,6 +1,7 @@
 from PyQt5.QtWidgets import *
 from PyQt5.QtCore import QTimer
-from PyQt5 import uic
+
+from PyQt5 import uic,QtGui
 import sys
 import os
 
@@ -10,6 +11,7 @@ import os
 
 class UI(QMainWindow):
 
+        
     def __init__(self):
         super(UI, self).__init__()
 
@@ -54,9 +56,18 @@ class UI(QMainWindow):
         self.timer.timeout.connect(self.position_of_cursor)
         self.timer.start(1000)
         self.myMessage = QLabel()
-        
+
         # Word Wrap
         self.actionWord_Wrap.triggered.connect(self.word_wrap)
+        
+        # Zoom function
+        
+        self.actionZoom_in.triggered.connect(self.zoomin)
+        self.actionZoom_out.triggered.connect(self.zoomout)
+        # base font
+        self.fnt = 11
+
+
 
         self.show()
 
@@ -194,12 +205,38 @@ class UI(QMainWindow):
         print(f"l {self.l}")
         self.myMessage.setText(
             f"   cursor position: {str(self.a)} | col: {self.c} | ln: {self.l} ")
-        
-        
-    def word_wrap(self):
-        print("hello")
-        pass
 
+    def word_wrap(self):
+        if self.actionWord_Wrap.isChecked() == True:
+            self.plain_text.setLineWrapMode(QTextEdit.FixedColumnWidth)
+            self.plain_text.setLineWrapColumnOrWidth(70)
+            print("Line Wrap on")
+        if self.actionWord_Wrap.isChecked() == False:
+            self.plain_text.setLineWrapMode(QTextEdit.NoWrap)
+            print("Line Wrap off")
+
+    def zoomin(self):
+        self.fnt = self.fnt+1
+        print(f"font{self.fnt}")
+        if self.fnt <= 8:
+            self.plain_text.setStyleSheet("QTextEdit { border: none; font: 11px Consolas } ")
+            self.fnt = 9
+        else:
+            self.plain_text.setStyleSheet(f"QTextEdit {{ border: none; font: {self.fnt}px Consolas }} ")
+            
+      
+
+    def zoomout(self):
+        self.fnt = self.fnt-1
+        print(f"font1: {self.fnt}")
+    
+        if self.fnt <= 8:
+            self.plain_text.setStyleSheet("QTextEdit { border: none; font: 11px Consolas } ")
+            self.fnt = 9
+        else:
+            self.plain_text.setStyleSheet(f"QTextEdit {{ border: none; font: {self.fnt}px Consolas }} ")
+        
+     
 
 app = QApplication(sys.argv)
 UiWindow = UI()

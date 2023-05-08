@@ -33,9 +33,18 @@ color: rgb(255, 255, 255);
       <height>417</height>
      </rect>
     </property>
+    <property name="focusPolicy">
+     <enum>Qt::ClickFocus</enum>
+    </property>
     <property name="styleSheet">
      <string notr="true">border: none;
 font: 11pt &quot;Consolas&quot;;</string>
+    </property>
+    <property name="lineWrapMode">
+     <enum>QTextEdit::NoWrap</enum>
+    </property>
+    <property name="tabStopWidth">
+     <number>103</number>
     </property>
    </widget>
   </widget>
