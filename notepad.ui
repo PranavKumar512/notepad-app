@@ -376,6 +376,9 @@ color: #4ea9ff;}</string>
    </property>
   </action>
   <action name="actionWord_Wrap">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
    <property name="text">
     <string>Word Wrap</string>
    </property>

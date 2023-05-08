@@ -54,6 +54,9 @@ class UI(QMainWindow):
         self.timer.timeout.connect(self.position_of_cursor)
         self.timer.start(1000)
         self.myMessage = QLabel()
+        
+        # Word Wrap
+        self.actionWord_Wrap.triggered.connect(self.word_wrap)
 
         self.show()
 
@@ -194,6 +197,7 @@ class UI(QMainWindow):
         
         
     def word_wrap(self):
+        print("hello")
         pass
 
 
