@@ -14,7 +14,7 @@ class UI(QMainWindow):
     def __init__(self):
         super(UI, self).__init__()
 
-        uic.loadUi("Notepad.ui", self)
+        uic.loadUi("notepad.ui", self)
         self.menu = self.findChild(QMenuBar, "menubar")
 
         # text edit
@@ -198,7 +198,7 @@ class UI(QMainWindow):
 
         self.a = self.plain_text.textCursor().position()
         self.c = self.plain_text.textCursor().columnNumber()
-        self.l = self.plain_text.textCursor().blockNumber()
+        self.l = self.plain_text.textCursor().blockNumber()+1
 
         print(self.a)
         print(f"c{self.c}")
