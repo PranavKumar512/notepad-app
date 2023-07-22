@@ -17,6 +17,9 @@ Designed using PyQt designer.
 
 ## Libraries used
 * PyQt5
+ ```bash
+    pip install PyQt5
+```
 * sys
 * os
 
