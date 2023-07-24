@@ -45,5 +45,5 @@ Designed using PyQt designer.
 
 ## Authors
 
-- [@dash-codes315](https://github.com/dash-codes315)
+- [@dash-codes315](https://github.com/PranavKumar512)
 
