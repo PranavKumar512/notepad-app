@@ -26,6 +26,7 @@ Designed using PyQt designer.
 
 ## Installation
 
+- For Installation in Windows OS.
 * Download both the file.
 * Install my-project with pyinstaller
 
